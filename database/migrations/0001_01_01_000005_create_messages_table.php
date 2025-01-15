@@ -11,15 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('chats', function (Blueprint $table) {
-            $table->id('chat_id');
-            $table->foreignId('owner_id')->constrained('users');
-            $table->string('name');
-            $table->enum('type', ['public', 'private'])->default('public');
-            $table->text('description');
-            $table->timestamp('creation_date')->default(DB::raw('CURRENT_TIMESTAMP'));
-        });
-
         Schema::create('messages', function (Blueprint $table) {
             $table->id('message_id');
             $table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete();
@@ -29,14 +20,14 @@ return new class extends Migration
             $table->enum('state', ['read', 'received', 'sent'])->default('sent');
             $table->timestamp('sent_date')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
-
-        Schema::create('members', function (Blueprint $table) {
-            $table->id('member_id');
-            $table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->enum('role', ['moderator', 'member'])->default('member');
-            $table->dateTime('entry_date');
-            $table->dateTime('departure_date'); //revisar
+        
+        Schema::create('reactions', function (Blueprint $table) {
+            $table->id('reaction_id');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('message_id')->constrained('messages', 'message_id')->cascadeOnDelete();
+            $table->string('type', 50);
+            $table->text('description');
+            $table->dateTime('reaction_date');
         });
     }
 
@@ -45,8 +36,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('chats');
         Schema::dropIfExists('messages');
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('reactions');
     }
 };
