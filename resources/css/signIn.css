@@ -16,7 +16,7 @@ html {
     background-color: #D8C6FF;
     border-radius: 10px;
     box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 14px 14px 5px rgba(0, 0, 0, 0.1);
     padding-top: 30px;
     padding-bottom: 50px;
     padding-right: 70px;
@@ -51,12 +51,13 @@ html {
 }
 
 .signInImage {
-    background-color: #170754;
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    box-sizing: border-box;
-    clip-path: polygon(100% 100%, 0 0, 100% 0);
+    background-image: url("/public/peaxie-fairy-violet.png");
+    background-size: 600%;
+    width: 80px;
+    height: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(1.1);
 }
 
 .labels {
@@ -102,4 +103,14 @@ html {
     border: none;
     padding: 4%;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.registerBtn:hover {
+    transform: scale(1.05);
+}
+
+::selection {
+    background-color: #170754;
+    color: #D8C6FF;
 }
