@@ -25,17 +25,16 @@ return new class extends Migration
             $table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->enum('role', ['moderator', 'member'])->default('member');
-            $table->dateTime('entry_date');
-            $table->dateTime('departure_date'); //revisar
+            $table->dateTime('entry_date');//current
         });
         
         Schema::create('bans', function (Blueprint $table) {
             $table->id('ban_id');
             $table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete();
             $table->foreignId('banned_user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('admin_id')->constrained('users');  //revisar
+            $table->foreignId('admin_id')->constrained('users');
             $table->enum('type', ['temporal', 'permanent']);
-            $table->dateTime('start_date'); //revisar
+            $table->dateTime('start_date'); //current
             $table->dateTime('end_date')->nullable();
         });
         
