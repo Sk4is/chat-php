@@ -2,17 +2,34 @@
 
 namespace App\Models;
 
-//use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Chat extends Model implements HasMedia
+class Chat extends Model
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
-    use InteractsWithMedia;
+
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'chat_id';
+
+    const CREATED_AT = 'creation_date';
+
+    /**
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'type' => 'public',
+    ];
 
     /**
      * The attributes that are mass assignable.
@@ -31,8 +48,6 @@ class Chat extends Model implements HasMedia
      * @var list<string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
     ];
 
     /**
@@ -43,7 +58,16 @@ class Chat extends Model implements HasMedia
     protected function casts(): array
     {
         return [
-            'creation_date' => 'datetime',
         ];
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'owner_id');
+    }
+
+    public function member(): HasMany
+    {
+        return $this->hasMany(Member::class);
     }
 }
