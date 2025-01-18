@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('achievement_id');
             $table->unsignedBigInteger('user_id');
             $table->primary(['achievement_id', 'user_id']);
-            $table->datetime('obtained_date');//current
+            $table->timestamp('obtained_date');
             $table->foreign('achievement_id')->references('achievement_id')->on('achievements')->cascadeOnDelete();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
         });

@@ -18,12 +18,29 @@ use HasFactory, Notifiable;
  *
  * @var string
  */
-protected $primaryKey = 'member_roles_id';
+protected $primaryKey = 'member_role_id';
+
+/**
+* The attributes that are mass assignable.
+*
+* @var list<string>
+*/
+protected $fillable = [
+    'member_id',
+    'role_id',
+    'chat_id'
+];
 
 public function member(): BelongsTo
 {
-    return $this->belongsTo(Member::class, 'member_id');
+    return $this->belongsTo(Member::class);
 }
+public function role(): BelongsTo
+{
+    return $this->belongsTo(Role::class);
+}
+
+
 
 
 }
