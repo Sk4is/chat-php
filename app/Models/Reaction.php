@@ -9,38 +9,38 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Reaction extends Model
 {
-/** @use HasFactory<\Database\Factories\UserFactory> */
-use HasFactory, Notifiable;
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable;
 
-/**
- * The primary key associated with the table.
- *
- * @var string
- */
-protected $primaryKey = 'reaction_id';
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'reaction_id';
 
-const CREATED_AT = 'reaction_date';
+    const CREATED_AT = 'reaction_date';
 
-/**
-* The attributes that are mass assignable.
-*
-* @var list<string>
-*/
-protected $fillable = [
-    'member_id',
-    'message_id',
-    'type',
-    'description'
-];
+    /**
+    * The attributes that are mass assignable.
+    *
+    * @var list<string>
+    */
+    protected $fillable = [
+        'member_id',
+        'message_id',
+        'type',
+        'description'
+    ];
 
-public function message(): BelongsTo
-{
-    return $this->belongsTo(Message::class);
-}
-public function member(): BelongsTo
-{
-    return $this->belongsTo(Member::class);
-}
+    public function message(): BelongsTo
+    {
+        return $this->belongsTo(Message::class);
+    }
+    public function member(): BelongsTo
+    {
+        return $this->belongsTo(Member::class);
+    }
 
 
 }

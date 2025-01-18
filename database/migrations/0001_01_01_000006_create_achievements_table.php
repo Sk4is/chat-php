@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('image', 255)->nullable();
         });
         
-        Schema::create('user_achievement', function (Blueprint $table) {
+        Schema::create('user_achievements', function (Blueprint $table) {
             $table->unsignedBigInteger('achievement_id');
             $table->unsignedBigInteger('user_id');
             $table->primary(['achievement_id', 'user_id']);
@@ -34,6 +34,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('achievements');
-        Schema::dropIfExists('user_achievement');
+        Schema::dropIfExists('user_achievements');
     }
 };
