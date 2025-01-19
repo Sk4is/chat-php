@@ -10,24 +10,38 @@
     <body>
         <div class="container">
             <div class="titleContainer">
-                <img class="signInImage"  />
+                <img class="signInImage" />
                 <div class="textContainer">
-                <span class="line1">SIGN UP</span>
-                <span class="line2">TO CHAT</span>
-            </div>
+                    <span class="line1">SIGN UP</span>
+                    <span class="line2">TO CHAT</span>
+                </div>
             </div>
             <form id="signInForm">
                 <label for="labels" class="labels">Username</label><br />
                 <input type="text" class="inputs" id="name" required /><br />
+
                 <label for="labels" class="labels">Email</label><br />
                 <input type="text" class="inputs" id="email" required /><br />
+
                 <label for="labels" class="labels">Password</label><br />
-                <input type="text" class="inputs" id="password" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required /><br />
+                <div class="passwordContainer">
+                    <input type="password" class="inputs" id="password" required />
+                    <span class="togglePassword" onclick="togglePassword('password')">
+                        <img src="/public/showEye.png" alt="Show/Hide Password" id="passwordIcon" />
+                    </span>
+                </div>
+
                 <label for="labels" class="labels">Confirm Password</label><br />
-                <input type="text" class="inputs" id="confirmPassword" required />
+                <div class="passwordContainer">
+                    <input type="password" class="inputs" id="confirmPassword" required />
+                    <span class="togglePassword" onclick="togglePassword('confirmPassword')">
+                        <img src="/public/showEye.png" alt="Show/Hide Password" id="confirmPasswordIcon" />
+                    </span>
+                </div><br />
+
                 <div class="register">
                     <a class="logIn" href="../html/logIn.html">
-                        You already have an acount?
+                        You already have an account?
                     </a>
                     <button type="submit" class="registerBtn">REGISTER</button>
                 </div>

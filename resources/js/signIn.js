@@ -65,3 +65,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+function togglePassword(inputId) {
+    const input = document.getElementById(inputId);
+    const icon = document.querySelector(`#${inputId}Icon`);
+    
+    if (input.type === "password") {
+        input.type = "text";
+        icon.src = "/public/hideEye.png";
+    } else {
+        input.type = "password";
+        icon.src = "/public/showEye.png";
+    }
+}

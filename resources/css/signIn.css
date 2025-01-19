@@ -41,6 +41,7 @@ html {
     font-size: 30px;
     font-weight: 700;
     color: #170754;
+    text-shadow: 2px 2px 2px #af9ed1;
 }
 
 .line2 {
@@ -48,6 +49,7 @@ html {
     font-weight: 700;
     color: #170754;
     margin-top: -10px;
+    text-shadow: 2px 2px 2px #af9ed1;
 }
 
 .signInImage {
@@ -57,7 +59,7 @@ html {
     height: 80px;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(1.1);
+    filter: brightness(1.08);
 }
 
 .labels {
@@ -113,4 +115,21 @@ html {
 ::selection {
     background-color: #170754;
     color: #D8C6FF;
+}
+
+.passwordContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.passwordContainer .togglePassword {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.passwordContainer .togglePassword img {
+    width: 22px;
+    height: 16px;
 }
