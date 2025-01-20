@@ -30,8 +30,8 @@ return new class extends Migration
         
         Schema::create('bans', function (Blueprint $table) {
             $table->id('ban_id');
-            $table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete();
-            $table->foreignId('banned_user_id')->constrained('users')->cascadeOnDelete();
+            //$table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete(); already on member fk chat_id
+            $table->foreignId('banned_member_id')->constrained('members', 'member_id')->cascadeOnDelete();
             $table->foreignId('admin_id')->constrained('users');
             $table->enum('type', ['temporal', 'permanent']);
             $table->dateTime('start_date'); //current

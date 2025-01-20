@@ -17,7 +17,13 @@ class MessageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name(),
+            'chat_id' => Chat::factory(),
+            'member_id' => Member::factory(),
+            'sent_date' => now(),
+            'content' => fake()->sentence(),
+            'state' => fake()->randomElement(['sent', 'read', 'received']),
+            'type' => 'text',
         ];
     }
 }
