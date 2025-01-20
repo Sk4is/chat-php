@@ -17,7 +17,11 @@ class ChatFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name(),
+            'user_id' => User::factory(),
+            'creation_date' => now(),
+            'description' => fake()->text(),
+            'type' => fake()->randomElement(['public', 'private'])
         ];
     }
 }

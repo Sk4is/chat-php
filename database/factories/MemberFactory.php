@@ -17,7 +17,11 @@ class MemberFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => User::class,
+            'chat_id' => Chat::class,
+            'type' => fake()->random(['moderator', 'member']),
+            'role' => fake()->text(),
+            'entry_date' => now()
         ];
     }
 }

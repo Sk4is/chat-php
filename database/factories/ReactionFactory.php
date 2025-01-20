@@ -17,7 +17,11 @@ class ReactionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'member_id' => Member::class,//----------message has member already
+            'message_id' => Message::class,
+            'type' => fake()->name(),
+            'text' => fake()->text(),
+            'reaction_date' => now()
         ];
     }
 }
