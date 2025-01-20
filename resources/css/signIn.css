@@ -5,15 +5,19 @@
 html {
     width: 100%;
     height: 100%;
-    background-color: #170754;
+    background-color: #012A4A;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
 }
 
+html, body, input {
+    font-family: 'Poppins', sans-serif;
+}
+
 .container {
-    background-color: #D8C6FF;
+    background-color: #A9D6E5;
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 14px 14px 5px rgba(0, 0, 0, 0.1);
@@ -40,16 +44,16 @@ html {
 .line1 {
     font-size: 30px;
     font-weight: 700;
-    color: #170754;
-    text-shadow: 2px 2px 2px #af9ed1;
+    color: #013A63;
+    text-shadow: 2px 2px 2px #61A5C2;
 }
 
 .line2 {
     font-size: 30px;
     font-weight: 700;
-    color: #170754;
+    color: #013A63;
     margin-top: -10px;
-    text-shadow: 2px 2px 2px #af9ed1;
+    text-shadow: 2px 2px 2px #61A5C2;
 }
 
 .signInImage {
@@ -59,18 +63,18 @@ html {
     height: 80px;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(1.08);
+    filter: brightness(1.06);
 }
 
 .labels {
-    color: #5033AE;
+    color: #01497C;
     font-size: 14px;
 }
 
 .inputs {
     width: 300px;
     height: 35px;
-    color: #170754;
+    color: #01497C;
     border-radius: 5px;
     box-sizing: border-box;
     border: none;
@@ -94,27 +98,28 @@ html {
 
 .logIn {
     font-size: 10px;
-    color: #170754;
+    color: #013A63;
 }
 
 .registerBtn {
-    background-color: #170754;
+    background-color: #013A63;
     color: white;
     border-radius: 5px;
     box-sizing: border-box;
     border: none;
     padding: 4%;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .registerBtn:hover {
     transform: scale(1.05);
+    background-color: #012A4A;
 }
 
 ::selection {
-    background-color: #170754;
-    color: #D8C6FF;
+    background-color: #013A63;
+    color: #A9D6E5;
 }
 
 .passwordContainer {
@@ -132,4 +137,14 @@ html {
 .passwordContainer .togglePassword img {
     width: 22px;
     height: 16px;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    display: none;
+}
+
+input[type="password"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }

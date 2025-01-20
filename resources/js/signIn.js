@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let valid = true;
         const fields = [
-            { id: "name", pattern: /.{1,}/, message: "El nombre no puede estar vacío." },
-            { id: "email", pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: "El correo electrónico no es válido." },
-            { id: "password", pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, message: "La contraseña debe tener al menos 8 caracteres, una letra y un número." },
-            { id: "confirmPassword", pattern: /.{1,}/, message: "Por favor, confirme la contraseña." },
+            { id: "name", pattern: /.{1,}/, message: "Username field can't be empty." },
+            { id: "email", pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: "Email is invalid." },
+            { id: "password", pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, message: "The password must contain 8 characters, 1 letter and 1 number." },
+            { id: "confirmPassword", pattern: /.{1,}/, message: "Please, confirm the password." },
         ];
 
         fields.forEach(function(field) {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 Swal.fire({
                     icon: 'error',
                     text: field.message,
-                    confirmButtonText: 'Aceptar'
+                    confirmButtonText: 'Confirm'
                 });
             }
         });
@@ -42,12 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (password !== confirmPassword) {
             valid = false;
             document.getElementById('confirmPassword').classList.add("invalid");
-            if (confirmPasswordError) confirmPasswordError.textContent = "Las contraseñas no coinciden.";
+            if (confirmPasswordError) confirmPasswordError.textContent = "The passwords doesn't match.";
 
             Swal.fire({
                 icon: 'error',
-                text: "Las contraseñas no coinciden.",
-                confirmButtonText: 'Aceptar'
+                text: "The passwords doesn't match.",
+                confirmButtonText: 'Confirm'
             });
         } else {
             document.getElementById('confirmPassword').classList.remove("invalid");
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (valid) {
             Swal.fire({
                 icon: 'success',
-                title: '¡Te has registrado con éxito!',
+                title: '¡Succesfully registered!',
                 confirmButtonText: 'Aceptar'
             }).then(() => {
                 window.location.href = '../html/login.html';
@@ -72,9 +72,9 @@ function togglePassword(inputId) {
     
     if (input.type === "password") {
         input.type = "text";
-        icon.src = "/public/hideEye.png";
+        icon.src = "/public/eyeHidden.png";
     } else {
         input.type = "password";
-        icon.src = "/public/showEye.png";
+        icon.src = "/public/eye.png";
     }
 }
