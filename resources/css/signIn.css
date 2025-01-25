@@ -57,7 +57,7 @@ html, body, input {
 }
 
 .signInImage {
-    background-image: url("/public/peaxie-fairy-violet.png");
+    background-image: url('{{ asset("/public/peaxie-fairy-violet.png") }}');
     background-size: 600%;
     width: 80px;
     height: 80px;
