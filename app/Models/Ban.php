@@ -67,7 +67,7 @@ class Ban extends Model
 
     public function bannedMembers(): HasOne
     {
-        return $this->hasOne(Member::class, 'banned_user_id');
+        return $this->hasOne(Member::class, 'banned_member_id');
     }
 
     public function adminMembers(): BelongsTo
