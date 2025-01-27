@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id('message_id');
-            $table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained('users');
+            //$table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete();
+            $table->foreignId('member_id')->constrained('members', 'member_id'); //member already contains chat's fk
             $table->text('content');
             $table->enum('type', ['text', 'image', 'video', 'audio'])->default('text');
             $table->enum('state', ['read', 'received', 'sent'])->default('sent');
@@ -23,7 +23,7 @@ return new class extends Migration
         
         Schema::create('reactions', function (Blueprint $table) {
             $table->id('reaction_id');
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('member_id')->constrained('members', 'member_id')->cascadeOnDelete();
             $table->foreignId('message_id')->constrained('messages', 'message_id')->cascadeOnDelete();
             $table->string('type', 50);
             $table->text('description');

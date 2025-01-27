@@ -25,25 +25,23 @@ return new class extends Migration
             $table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->enum('role', ['moderator', 'member'])->default('member');
-            $table->dateTime('entry_date');
-            $table->dateTime('departure_date'); //revisar
+            $table->dateTime('entry_date');//current
         });
         
         Schema::create('bans', function (Blueprint $table) {
             $table->id('ban_id');
-            $table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete();
-            $table->foreignId('banned_user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('admin_id')->constrained('users');  //revisar
+            //$table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete(); already on member fk chat_id
+            $table->foreignId('banned_member_id')->constrained('members', 'member_id')->cascadeOnDelete();
+            $table->foreignId('admin_id')->constrained('users');
             $table->enum('type', ['temporal', 'permanent']);
-            $table->dateTime('start_date'); //revisar
+            $table->dateTime('start_date'); //current
             $table->dateTime('end_date')->nullable();
         });
         
-        Schema::create('member_roles', function (Blueprint $table) {
-            $table->id('member_roles_id');
+        Schema::create('member_role', function (Blueprint $table) {
+            $table->id('member_role_id');
             $table->foreignId('member_id')->constrained('members', 'member_id')->cascadeOnDelete();
             $table->foreignId('role_id')->constrained('roles', 'role_id')->cascadeOnDelete();
-            $table->foreignId('chat_id')->constrained('chats', 'chat_id')->cascadeOnDelete();
         });
     }
 
@@ -55,6 +53,6 @@ return new class extends Migration
         Schema::dropIfExists('chats');
         Schema::dropIfExists('members');
         Schema::dropIfExists('bans');
-        Schema::dropIfExists('member_roles');
+        Schema::dropIfExists('member_role');
     }
 };

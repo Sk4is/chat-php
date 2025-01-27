@@ -12,14 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('notifications', function (Blueprint $table) {
-            $table->id('request_id');
-            $table->foreignId('user_sender_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('user_receiver_id')->constrained('users')->cascadeOnDelete();
-            $table->enum('state', ['pending', 'accepted', 'denied'])->default('pending');
-            $table->datetime('request_date');
+            $table->id('notification_id');
+            $table->text('content');
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->datetime('sent_date');
         });
         
-        Schema::create('action_history', function (Blueprint $table) {
+        Schema::create('action_histories', function (Blueprint $table) {
             $table->id('history_id');
             $table->datetime('action_date');
             $table->string('action_type', 255);
@@ -37,6 +36,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('notifications');
-        Schema::dropIfExists('action_history');
+        Schema::dropIfExists('action_histories');
     }
 };

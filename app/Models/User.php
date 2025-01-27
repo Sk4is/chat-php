@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'status'
     ];
 
     /**
@@ -45,4 +46,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function achievement()
+    {
+        return $this->belongsToMany(Achievement::class, 'user_achievement', 'user_id', 'achievement_id')
+                    ->using(UserAchievement::class)->withPivot('obtained_at');
+    }
+
 }
