@@ -9,8 +9,16 @@ use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\PasswordController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Dashboard\SettingsController;
+use App\Http\Controllers\Dashboard\ChatController;
+use App\Http\Controllers\Dashboard\ChatInteractionController;
+use App\Http\Controllers\Dashboard\ListDisplayController;
+use App\Http\Controllers\Dashboard\SearchToolController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/db-test', function () {
     try {
@@ -21,7 +29,16 @@ Route::get('/db-test', function () {
     }
 });
 
+Route::get('/', function(){
+    if (Auth::check()) {
+        return redirect()->route('dashboard');
+    }
+    return view('welcome');
+});
+
+
 Route::middleware('guest')->group(function () {
+
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
     Route::post('register', [RegisteredUserController::class, 'store']);
 
@@ -39,6 +56,7 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    //Seran utiles algunas en settings, en un futuro
     Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])->name('verification.notice');
     Route::get('verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])->middleware(['signed', 'throttle:6,1'])->name('verification.verify');
     Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])->middleware('throttle:6,1')->name('verification.send');
@@ -47,5 +65,21 @@ Route::middleware('auth')->group(function () {
     Route::post('confirm-password', [ConfirmablePasswordController::class, 'store']);
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+    //He adaptado la ruta al nuevo controlador de Dashboard (que vamos a necesitar)
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+/*     Route::prefix('dashboard')->group(function () {
+        Route::get('/create-chat', [ChatController::class, 'create'])->name('dashboard.create-chat');
+        Route::get('/interactions-in-chat', [ChatInteractionController::class, 'create'])->name('dashboard.interactions-in-chat');
+        Route::get('/display-of-lists', [ListDisplayController::class, 'create'])->name('dashboard.display-of-lists');
+        Route::get('/search-tool', [SearchToolController::class, 'create'])->name('dashboard.search-tool');
+        Route::get('/settings', [SettingsController::class, 'create'])->name('dashboard.settings');
+    }); */
+    
 });
 
