@@ -60,13 +60,18 @@
 
                     <main class="mt-6">
                         <div class="">
+
+                            <div class="border-t border-white w-full"></div>
+
                             <h1 class="text-blue-1 text-8xl font-semibold text-center" >Welcome to Pixie chat</h1>
                                 <div class="img-container">
+
+                                    <div class="h-[150px]"></div> <!-- Espacio para los avatares -->
                                     
                                 </div>
                             <h2 class="text-blue-1 text-xl font-semibold text-center">The community where everyone has a place!</h2>
                                 
-
+                            <div class="border-t border-white w-full"></div>
                             
                         </div>
                     </main>
