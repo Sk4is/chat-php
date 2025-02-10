@@ -12,20 +12,20 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Figtree", ...defaultTheme.fontFamily.sans],
+                sans: ['Manrope', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 blue: {
-                    1: "#012A4A",
-                    2: "#013A63",
-                    3: "#01497C",
-                    4: "#014F86",
-                    5: "#2A6F97",
-                    6: "#2C7DA0",
-                    7: "#468FAF",
-                    8: "#61A5C2",
-                    9: "#89C2D9",
-                    10: "#A9D6E5",
+                    1: '#A9D6E5',
+                    2: '#89C2D9',
+                    3: '#61A5C2',
+                    4: '#468FAF',
+                    5: '#2C7DA0',
+                    6: '#2A6F97',
+                    7: '#014F86',
+                    8: '#01497C',
+                    9: '#013A63',
+                    10: '#012A4A',
                 },
             },
         },
