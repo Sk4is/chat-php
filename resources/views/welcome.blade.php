@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>BreezeFlow</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,7 +67,7 @@
 
                             <div class="border-t border-white w-full"></div>
 
-                            <h1 class="text-blue-1 text-6xl lg:text-8xl font-semibold text-center my-10" >Welcome to Pixie chat</h1>
+                            <h1 class="text-blue-1 text-6xl lg:text-8xl font-semibold text-center my-10" >Welcome to BreezeFlow</h1>
                                 <div class="flex justify-center items-center">
 
                                     <img src="{{ asset('storage/buddhas.jpg') }}" alt="Buddha´s Statue" class="w-60 h-60 rounded-full object-cover align-center">
@@ -81,7 +81,7 @@
                     </main>
 
                     <footer class="py-5 text-center text-sm text-white dark:text-white/70">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                        &copy; BreezeFlow 2025
                     </footer>
                 </div>
             </div>
