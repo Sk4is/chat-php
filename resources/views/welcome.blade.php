@@ -20,8 +20,8 @@
             </style>
         @endif
     </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-blue-8 text-black/50 dark:bg-black dark:text-white/50">
+    <body class="font-sans antialiased ">
+        <div class="bg-blue-8 text-blue-4 ">
             <div class="relative min-h-screen flex flex-col items-center justify-around selection:bg-blue-2 selection:text-white">
                 <div class="relative w-full min-h-screen">
                     <header class="grid grid-cols-2 items-center justify-between gap-2 py-5">
@@ -36,7 +36,7 @@
                                 @auth
                                     <a
                                         href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 text-white ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-blue-2"
+                                        class="rounded-md px-3 text-blue-2 ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-blue-2"
                                     >
                                         Dashboard
                                     </a>
