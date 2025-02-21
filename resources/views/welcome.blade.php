@@ -21,7 +21,7 @@
         @endif
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-blue-8 text-black/50 dark:bg-black dark:text-white/50">
+        <div class="bg-blue-8 text-black/50 dark:bg-blue-10 dark:text-white/50">
             <div class="relative min-h-screen flex flex-col items-center justify-around selection:bg-blue-2 selection:text-white">
                 <div class="relative w-full min-h-screen">
                     <header class="grid grid-cols-2 items-center justify-between gap-2 py-5">
@@ -67,22 +67,26 @@
 
                             <div class="border-t border-white w-full"></div>
 
+
                             <h1 class="text-blue-1 text-6xl lg:text-8xl font-semibold text-center my-10" >Welcome to BreezeFlow</h1>
                                 <div class="flex justify-center items-center">
 
                                     <img src="{{ asset('images/buddhas.jpg') }}" alt="Buddha´s Statue" class="w-60 h-60 rounded-full object-cover align-center">
                                     
                                 </div>
-                            <h2 class="text-blue-1 text-xl lg:text-3xl font-semibold text-center my-10">The community where everyone has a place!</h2>
-                                
+                            <h2 class="text-white text-xl lg:text-3xl font-semibold text-center my-10">The community where everyone has a place!</h2>
+
                             <div class="border-t border-white w-full"></div>
-                            
+
                         </div>
                     </main>
 
-                    <footer class="py-5 text-center text-sm text-white dark:text-white/70">
-                        &copy; BreezeFlow 2025
+                    <footer class="flex py-5 text-center text-sm text-white dark:text-white/70 justify-between items-center mt-6 mr-10 ml-10 margin-0 top-0 left-0">
+                        <span>&copy; BreezeFlow</span>
+                        <img class="w-8 h-8" src="/github.png" alt="Github logo">
+
                     </footer>
+
                 </div>
             </div>
         </div>
