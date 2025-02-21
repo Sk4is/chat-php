@@ -14,7 +14,6 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <!-- Fondo -->
@@ -31,5 +30,6 @@
             </div>
         </div>
         <script src="{{ asset('js/auth.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 </html>

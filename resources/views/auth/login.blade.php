@@ -2,9 +2,8 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
+    <form id="loginForm" method="POST" action="{{ route('login') }}" onsubmit="return validateForm('login')">
         @csrf
-
         <div class="selection:bg-blue-1 selection:text-blue-10 dark:selection:bg-blue-10 dark:selection:text-blue-1">
 
             <!-- Email Address -->

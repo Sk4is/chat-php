@@ -1,7 +1,6 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form id="registerForm" method="POST" action="{{ route('register') }}" onsubmit="return validateForm('register')">
         @csrf
-
         <div class="selection:bg-blue-1 selection:text-blue-10 dark:selection:bg-blue-10 dark:selection:text-blue-1">
 
             <!-- Name -->
@@ -49,7 +48,7 @@
                     class="ms-4 bg-blue-1 dark:bg-blue-10 text-blue-10 dark:text-white py-2 px-4 rounded-lg hover:bg-blue-2 dark:hover:bg-blue-7 focus:outline-none focus:ring-2 focus:ring-primary-dark">
                     {{ __('Register') }}
                 </button>
-
+                
             </div>
         </div>
     </form>
