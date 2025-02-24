@@ -39,25 +39,27 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
+    /**
+     * Update the user's password.
+     */
     public function passwordUpdate(Request $request): RedirectResponse
-{
-    $request->validate([
-        'current_password' => ['required', function ($attribute, $value, $fail) {
-            if (!Hash::check($value, Auth::user()->password)) {
-                $fail('The current password is incorrect.');
-            }
-        }],
-        'password' => ['required', 'confirmed', Password::min(8)->letters()->numbers()],
-    ]);
+    {
+        $request->validate([
+            'current_password' => ['required', function ($attribute, $value, $fail) {
+                if (!Hash::check($value, Auth::user()->password)) {
+                    $fail('The current password is incorrect.');
+                }
+            }],
+            'password' => ['required', 'confirmed', Password::min(8)->letters()->numbers()],
+        ]);
 
-    $user = $request->user();
-    $user->update([
-        'password' => Hash::make($request->password),
-    ]);
+        $user = $request->user();
+        $user->update([
+            'password' => Hash::make($request->password),
+        ]);
 
-    return Redirect::route('profile.edit')->with('status', 'password-updated');
-}
-
+        return Redirect::route('profile.edit')->with('status', 'password-updated');
+    }
 
     /**
      * Delete the user's account.

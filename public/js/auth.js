@@ -26,11 +26,15 @@ function validateForm(formType) {
     const fields = formType === "login" ? [
         { id: "email", pattern: isValidEmail, message: "Invalid email address." },
         { id: "password", pattern: val => val.length >= 8, message: "Password must be at least 8 characters long." }
-    ] : [
+    ] : formType === "register" ? [
         { id: "name", pattern: isValidUsername, message: "Username must be at least 3 characters long and contain only letters and numbers." },
         { id: "email", pattern: isValidEmail, message: "Invalid email address." },
         { id: "password", pattern: isValidPassword, message: "Password must be at least 8 characters, contain a letter, and a number." },
         { id: "password_confirmation", pattern: val => val.length > 0, message: "Please confirm your password." }
+    ] : [
+        { id: "update_password_current_password", pattern: val => val.length > 0, message: "Current password is required." },
+        { id: "update_password_password", pattern: isValidPassword, message: "New password must be at least 8 characters, contain a letter, and a number." },
+        { id: "update_password_password_confirmation", pattern: val => val.length > 0, message: "Please confirm your new password." }
     ];
 
     fields.forEach(field => {
@@ -56,13 +60,13 @@ function validateForm(formType) {
         }
     });
 
-    if (formType === "register") {
-        const password = document.getElementById("password").value.trim();
-        const confirmPassword = document.getElementById("password_confirmation").value.trim();
+    if (formType === "register" || formType === "updatePassword") {
+        const password = document.getElementById(formType === "register" ? "password" : "update_password_password").value.trim();
+        const confirmPassword = document.getElementById(formType === "register" ? "password_confirmation" : "update_password_password_confirmation").value.trim();
 
         if (password !== confirmPassword) {
             valid = false;
-            const confirmPasswordError = document.getElementById("registerConfirmPasswordError");
+            const confirmPasswordError = document.getElementById(formType === "register" ? "registerConfirmPasswordError" : "updatePasswordConfirmPasswordError");
             if (confirmPasswordError) {
                 confirmPasswordError.textContent = "Passwords do not match.";
             }
@@ -80,6 +84,7 @@ function validateForm(formType) {
 document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.getElementById('login');
     const registerForm = document.getElementById('register');
+    const updatePasswordForm = document.getElementById('updatePassword');
 
     if (loginForm) {
         loginForm.addEventListener('submit', function(event) {
@@ -100,6 +105,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 showAlert("Registration successful!", "success");
                 setTimeout(() => {
                     window.location.href = "{{ route('dashboard') }}"; 
+                }, 1500);
+            }
+        });
+    }
+
+    if (updatePasswordForm) {
+        updatePasswordForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (validateForm("updatePassword")) {
+                showAlert("Password update successful!", "success");
+                setTimeout(() => {
+                    updatePasswordForm.submit();
                 }, 1500);
             }
         });
