@@ -20,15 +20,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/db-test', function () {
-    try {
-        DB::connection()->getPdo();
-        return "Connection established";
-    } catch (\Exception $e) {
-        return "Couldn't connect to database:" . $e->getMessage();
-    }
-});
-
 Route::get('/', function(){
     if (Auth::check()) {
         return redirect()->route('dashboard');
@@ -56,7 +47,6 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    //Seran utiles algunas en settings, en un futuro
     Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])->name('verification.notice');
     Route::get('verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])->middleware(['signed', 'throttle:6,1'])->name('verification.verify');
     Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])->middleware('throttle:6,1')->name('verification.send');
@@ -66,20 +56,12 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
-    //He adaptado la ruta al nuevo controlador de Dashboard (que vamos a necesitar)
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('no-cache');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('no-cache');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('profile/password', [ProfileController::class, 'passwordUpdate'])->name('profile.password-update');
 
-/*     Route::prefix('dashboard')->group(function () {
-        Route::get('/create-chat', [ChatController::class, 'create'])->name('dashboard.create-chat');
-        Route::get('/interactions-in-chat', [ChatInteractionController::class, 'create'])->name('dashboard.interactions-in-chat');
-        Route::get('/display-of-lists', [ListDisplayController::class, 'create'])->name('dashboard.display-of-lists');
-        Route::get('/search-tool', [SearchToolController::class, 'create'])->name('dashboard.search-tool');
-        Route::get('/settings', [SettingsController::class, 'create'])->name('dashboard.settings');
-    }); */
-    
 });
 
