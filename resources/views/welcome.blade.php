@@ -28,7 +28,7 @@
 
                         <div class="logo">
 
-                            <img src="{{ asset('images/peaxie-fairy-violet.png') }}" alt="Pixie-logo" class="size-20 rounded-full object-cover align-center">
+                            <img src="{{ asset('images/public-domain/peaxie-fairy-violet.png') }}" alt="Pixie-logo" class="size-20 rounded-full object-cover align-center">
                             
                         </div>
                         @if (Route::has('login'))
@@ -71,7 +71,7 @@
                             <h1 class="text-blue-1 text-6xl lg:text-8xl font-semibold text-center my-10" >Welcome to BreezeFlow</h1>
                                 <div class="flex justify-center items-center">
 
-                                    <img src="{{ asset('images/buddhas.jpg') }}" alt="Buddha´s Statue" class="w-60 h-60 rounded-full object-cover align-center">
+                                    <img src="{{ asset('images/public-domain/buddhas.jpg') }}" alt="Buddha´s Statue" class="w-60 h-60 rounded-full object-cover align-center">
                                     
                                 </div>
                             <h2 class="text-white text-xl lg:text-3xl font-semibold text-center my-10">The community where everyone has a place!</h2>
