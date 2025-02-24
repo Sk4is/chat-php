@@ -31,10 +31,13 @@ function validateForm(formType) {
         { id: "email", pattern: isValidEmail, message: "Invalid email address." },
         { id: "password", pattern: isValidPassword, message: "Password must be at least 8 characters, contain a letter, and a number." },
         { id: "password_confirmation", pattern: val => val.length > 0, message: "Please confirm your password." }
-    ] : [
+    ] : formType === "updatePassword" ? [
         { id: "update_password_current_password", pattern: val => val.length > 0, message: "Current password is required." },
         { id: "update_password_password", pattern: isValidPassword, message: "New password must be at least 8 characters, contain a letter, and a number." },
         { id: "update_password_password_confirmation", pattern: val => val.length > 0, message: "Please confirm your new password." }
+    ] : [
+        { id: "update_profile_name", pattern: isValidUsername, message: "Username must be at least 3 characters long and contain only letters and numbers." },
+        { id: "update_profile_email", pattern: isValidEmail, message: "Invalid email address." }
     ];
 
     fields.forEach(field => {
@@ -85,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginForm = document.getElementById('login');
     const registerForm = document.getElementById('register');
     const updatePasswordForm = document.getElementById('updatePassword');
+    const updateProfileForm = document.getElementById('updateProfile');
 
     if (loginForm) {
         loginForm.addEventListener('submit', function(event) {
@@ -93,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 showAlert("Login successful!", "success");
                 setTimeout(() => {
                     window.location.href = "{{ route('dashboard') }}"; 
-                }, 1500);
+                }, 4000);
             }
         });
     }
@@ -105,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 showAlert("Registration successful!", "success");
                 setTimeout(() => {
                     window.location.href = "{{ route('dashboard') }}"; 
-                }, 1500);
+                }, 4000);
             }
         });
     }
@@ -117,7 +121,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 showAlert("Password update successful!", "success");
                 setTimeout(() => {
                     updatePasswordForm.submit();
-                }, 1500);
+                }, 4000);
+            }
+        });
+    }
+
+    if (updateProfileForm) {
+        updateProfileForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (validateForm("updateProfile")) {
+                showAlert("Profile format is correct, waiting for validation", "warning");
+                setTimeout(() => {
+                    updateProfileForm.submit();
+                }, 4000);
             }
         });
     }
