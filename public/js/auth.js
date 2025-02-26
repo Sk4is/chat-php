@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (validateForm("login")) {
                 showAlert("Login successful!", "success");
                 setTimeout(() => {
-                    window.location.href = "{{ route('dashboard') }}"; 
+                    loginForm.submit(); 
                 }, 4000);
             }
         });
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (validateForm("register")) {
                 showAlert("Registration successful!", "success");
                 setTimeout(() => {
-                    window.location.href = "{{ route('dashboard') }}"; 
+                    registerForm.submit(); 
                 }, 4000);
             }
         });

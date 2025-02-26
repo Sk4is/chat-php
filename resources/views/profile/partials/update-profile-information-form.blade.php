@@ -9,10 +9,6 @@
         </p>
     </header>
 
-    <form id="send-verification" method="post" action="{{ route('verification.send') }}">
-        @csrf
-    </form>
-
     <form id="updateProfile" method="post" action="{{ route('profile.update') }}" onsubmit="return validateForm('updateProfile')" class="mt-6 space-y-6">
         @csrf
         @method('patch')

@@ -40,10 +40,6 @@ class ProfileController extends Controller
 
         $user->fill($validatedData);
 
-        if ($emailChanged) {
-            $user->email_verified_at = null;
-        }
-
         $user->save();
 
         if ($nameChanged && $emailChanged) {
