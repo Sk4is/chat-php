@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (validateForm("register")) {
                 showAlert("Registration successful!", "success");
                 setTimeout(() => {
-                    registerForm.submit(); 
+                    registerForm.submit();
                 }, 4000);
             }
         });
