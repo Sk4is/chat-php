@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\UselessFactController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
@@ -17,7 +18,7 @@ Route::get('/', function(){
 
 
 Route::middleware('guest')->group(function () {
-
+    Route::get('/', [UselessFactController::class, 'index']);
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
     Route::post('register', [RegisteredUserController::class, 'store']);
 
