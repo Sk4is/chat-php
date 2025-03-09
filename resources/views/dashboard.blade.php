@@ -15,7 +15,8 @@
         <div class="available-chats w-1/3 h-full bg-blue-8">
             <div class="favorite h-1/3 w-full border-b">
             </div>
-            <div class="friends h-1/3 w-full border-b">
+            <div class="friends h-1/3 w-full border-b flex flex-col justify-start items-center p-6">
+            <a href="{{ url('/friends') }}" class="btn btn-primary bg-blue-4 text-white px-4 py-2 rounded w-1/2">{{ _("All friends")}}</a>
             </div>
             <div class="groups h-1/3 w-full border-b">
             </div>

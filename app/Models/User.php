@@ -53,4 +53,40 @@ class User extends Authenticatable
                     ->using(UserAchievement::class)->withPivot('obtained_at');
     }
 
+    //Mejor añadir la función a User para reutilizarla, y permite filtrar los resultados
+    public function allContacts()
+    {
+        return Contact::where('user_sender_id', $this->id)
+            ->orWhere('contact_user_id', $this->id)
+            ->get()
+            ->map(function ($contact) {
+                return $contact->user_sender_id == $this->id
+                    ? $contact->contactedFriend
+                    : $contact->senderFriend;
+            });
+    }
+
+    public function senderFriend(): HasMany
+    {
+        return $this->hasMany(Contact::class, 'user_sender_id');
+    }
+
+    public function contactedFriend(): HasMany
+    {
+        return $this->hasMany(Contact::class, 'contact_user_id');
+    }
+
+    public function allFriends()
+    {
+        $friendIds = Contact::where('user_sender_id', $this->id)
+            ->pluck('contact_user_id')
+            ->merge(
+                Contact::where('contact_user_id', $this->id)
+                    ->pluck('user_sender_id')
+            )
+            ->unique();
+    
+        return User::whereIn('id', $friendIds)->get();
+    }
+    
 }
