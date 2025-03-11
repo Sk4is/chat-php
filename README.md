@@ -86,7 +86,7 @@ BreezeFlow is a dynamic web application designed for seamless real-time communic
 - **Backend**: PHP & SQL
 - **Frontend**: HTML, CSS, JavaScript, Tailwind CSS
 
-<h1>🔧 Installation</h1>
+<h1>🔧 Installation & Configuration 🛠️</h1>
 
 1. **Clone the Repository 🔄**:
 
