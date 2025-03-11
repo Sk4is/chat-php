@@ -3,15 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 
-class Contact extends Pivot
+class Contact extends Model
 {
  /** @use HasFactory<\Database\Factories\UserFactory> */
  use HasFactory, Notifiable;
+
+ protected $table = 'contacts';
 
  /**
   * The primary key associated with the table.
@@ -20,21 +21,19 @@ class Contact extends Pivot
   */
  protected $primaryKey = 'contact_id';
 
- const CREATED_AT = 'added_date';
+ public $timestamps = false;
+ 
+ protected $fillable = ['user_sender_id', 'contact_user_id', 'added_date'];
 
 
- public function senderFriend()
+ public function sender()
  {
-    return $this->belongsToMany(User::class, 'contacts', 'user_sender_id', 'contact_user_id');
+     return $this->belongsTo(User::class, 'user_sender_id');
  }
 
- public function contactedFriend(){
-    return $this->belongsToMany(User::class, 'contacts', 'contact_user_id', 'user_sender_id');
- }
-
- public function allFriends()
+ public function receiver()
  {
-     return $this->senderFriend()->union($this->contactedFriend());
+     return $this->belongsTo(User::class, 'contact_user_id');
  }
 
 }
