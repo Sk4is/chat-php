@@ -54,6 +54,24 @@
                         <span class="text-xs text-blue-4">12:45 PM</span>
                     </div>
                 </div>
+                <ul class="w-full h-full flex flex-col items-center gap-2">
+                    @forelse($friends as $friend)
+                    <li class="rounded-lg bg-blue-2 text-white px-4 py-2 w-full min-h-[70px] flex justify-between items-center">
+                        <div class="h-full flex justify-start items-center gap-4">
+                            <div class="bg-blue-7 w-[35px] aspect-square rounded-full"></div>
+                            <div class="flex flex-col">
+                                <h5 class="text-lg font-bold text-white">{{$friend->name }}</h5>
+                                <p class="text-blue-4">last message</p>
+                            </div>
+                        </div>
+                        <div class="w-1/5 h-full flex justify-end items-center gap-1">
+                            <span class="{{ $friend->status === 'online' ? 'bg-green-600' : 'bg-blue-4' }} block w-[10px] aspect-square rounded-full"></span><span class="{{ $friend->status === 'online' ? 'text-green-600' : 'text-blue-4' }}"> {{ $friend->status }} </span>
+                        </div>
+                    </li>
+                    @empty
+                    <li class="rounded-lg bg-blue-8 text-white p-6 w-1/2">{{__("You have no friends")}}</li>
+                    @endforelse
+                </ul>
 
             </div>
         </div>

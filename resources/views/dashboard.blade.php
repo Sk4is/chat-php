@@ -2,22 +2,22 @@
     <x-slot name="header">
         <div class="flex items-center justify-between">
             <img src="images/logo.png" alt="BreezeFlow logo">
-            <div class="w-1/2 h-[30px] bg-blue-2 rounded-full flex items-center">
+            <div class="w-1/2 h-[40px] bg-blue-2 rounded-full flex items-center pr-3">
                 <input type="text" placeholder="Search a group"
-                    class="bg-transparent text-white w-full h-full px-5 placeholder:text-white focus:outline-none">
+                    class="bg-transparent text-blue-10 font-bold w-full h-full px-5 placeholder:text-blue-10 placeholder:font-bold focus:outline-none">
                 <img src="images/icons/lens 1.png" alt="Search Icon" class="w-4 h-4 mr-2">
             </div>
             <button class="bg-blue-4 text-white px-4 py-2 rounded flex items-center" id="new-chat-btn">
                 <img src="images/icons/newChat 1.png" alt="" class="mr-2 w-6 h-6">
                 {{ _('New chat') }}
             </button>
-            <a href="{{ url('/friends') }}" class="btn btn-primary bg-blue-4 text-white px-4 py-2 rounded w-1/3 min-w-[120px] flex justify-center">{{ _("Friends list")}}</a>
+            <a href="{{ url('/friends') }}" class="btn btn-primary bg-blue-4 text-white px-4 py-2 rounded min-w-[140px] flex justify-center">{{ _("Friends history")}}</a>
         </div>
     </x-slot>
 
     <div class="w-full h-[600px] flex flex-col sm:flex-row overflow-hidden">
         <div class="available-chats sm:w-1/3 w-full h-full bg-blue-8 overflow-hidden p-4">
-            <div id="button-container" class="flex justify-start items-center h-14 space-x-2 cursor-grab whitespace-nowrap overflow-hidden">
+            <div id="button-container" class="flex justify-center items-center h-14 space-x-2 cursor-grab whitespace-nowrap overflow-hidden">
                 <a href="{{ route('public') }}">
                     <button class="text-white px-3 py-2 rounded text-sm min-w-max">{{ _('Public') }}</button>
                 </a>

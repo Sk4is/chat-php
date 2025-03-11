@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class DirectController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('direct');
+        $user = $request->user();
+
+        $friends = $user->allFriends();
+
+        return view('direct', compact('friends'));
     }
 }
