@@ -6,6 +6,55 @@
 
 BreezeFlow is a dynamic web application designed for seamless real-time communication. It allows users to engage in one-on-one chats, create private and themed groups, and connect with friends. Whether you're working on a project, participating in interest-based discussions, or just catching up with friends, BreezeFlow provides a user-friendly platform to stay connected. With its intuitive interface, real-time message delivery, and flexible group creation options, BreezeFlow is ideal for both personal and professional communication. Join conversations, share ideas, and collaborate in a secure and interactive environment.
 
+<h1>🔧 Installation & Configuration 🛠️</h1>
+
+1. **Clone the Repository 🔄**:
+
+    ```bash
+    git clone https://github.com/Bimai6/breeze-flow.git
+    cd breeze-flow
+    ```
+
+2. **Set Up the Environment 🖥️**:
+
+    ```bash
+    npm install
+    ```
+
+3. **Install Composer ✍**:
+
+    ```bash
+    composer install
+    ```
+
+4. **Create ".env" File 📄**:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+5. **Generate Key for Laravel 🔑**:
+
+    ```bash
+    php artisan key:generate
+    ```
+
+5. **Generate Migrations ✈️**:
+
+    ```bash
+    php artisan migrate
+    ```
+
+6. **Start the Application & Server 🚀**:
+
+    ```bash
+    npm run dev
+    ```
+
+    ```bash
+    php artisan serve
+    ```
+
 <h1>👥 Members & Roles</h1>
 
 <table>
@@ -85,55 +134,6 @@ BreezeFlow is a dynamic web application designed for seamless real-time communic
 
 - **Backend**: PHP & SQL
 - **Frontend**: HTML, CSS, JavaScript, Tailwind CSS
-
-<h1>🔧 Installation & Configuration 🛠️</h1>
-
-1. **Clone the Repository 🔄**:
-
-    ```bash
-    git clone https://github.com/Bimai6/breeze-flow.git
-    cd breeze-flow
-    ```
-
-2. **Set Up the Environment 🖥️**:
-
-    ```bash
-    npm install
-    ```
-
-3. **Install Composer ✍**:
-
-    ```bash
-    composer install
-    ```
-
-4. **Create ".env" File 📄**:
-
-    ```bash
-    cp .env.example .env
-    ```
-
-5. **Generate Key for Laravel 🔑**:
-
-    ```bash
-    php artisan key:generate
-    ```
-
-5. **Generate Migrations ✈️**:
-
-    ```bash
-    php artisan migrate
-    ```
-
-6. **Start the Application & Server 🚀**:
-
-    ```bash
-    npm run dev
-    ```
-
-    ```bash
-    php artisan serve
-    ```
     
 <h1>📈 Methodology</h1>
 
