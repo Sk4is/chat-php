@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="logo" alt="BreezeFlow">
-</p>
-
-<h1>BreezeFlow 🌬️</h1>
+<h1>BreezeFlow <img src="https://res.cloudinary.com/demqnwfff/image/upload/v1741725645/breeze_vqle5w.png" alt="BreezeFlow" width="50"></h1>
 
 BreezeFlow is a dynamic web application designed for seamless real-time communication. It allows users to engage in one-on-one chats, create private and themed groups, and connect with friends. Whether you're working on a project, participating in interest-based discussions, or just catching up with friends, BreezeFlow provides a user-friendly platform to stay connected. With its intuitive interface, real-time message delivery, and flexible group creation options, BreezeFlow is ideal for both personal and professional communication. Join conversations, share ideas, and collaborate in a secure and interactive environment.
 
