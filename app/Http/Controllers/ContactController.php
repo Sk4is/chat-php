@@ -15,6 +15,19 @@ class ContactController extends Controller
         if (!$user) {
             throw new Exception("No authenticated user found in the request!");
         }
+
+        $friends = $user->allDateFriends();
+        //return response()->json($user->allFriends());
+
+        return view('friends', compact('friends'));
+    }
+
+    public function jsonContactData(Request $request)
+    {
+        $user = $request->user();
+        if (!$user) {
+            throw new Exception("No authenticated user found in the request!");
+        }
         return response()->json($user->allFriends());
     }
 }
