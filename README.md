@@ -101,7 +101,7 @@ BreezeFlow is a dynamic web application designed for seamless real-time communic
     npm install
     ```
 
-3. **Install and Set Up Composer**:
+3. **Install Composer**:
 
     ```bash
     composer install
