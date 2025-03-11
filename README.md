@@ -88,26 +88,44 @@ BreezeFlow is a dynamic web application designed for seamless real-time communic
 
 <h1>🔧 Installation</h1>
 
-1. **Clone the Repository**:
+1. **Clone the Repository 🔄**:
 
     ```bash
     git clone https://github.com/Bimai6/breeze-flow.git
     cd breeze-flow
     ```
 
-2. **Set Up the Environment**:
+2. **Set Up the Environment 🖥️**:
 
     ```bash
     npm install
     ```
 
-3. **Install Composer**:
+3. **Install Composer ✍**:
 
     ```bash
     composer install
     ```
 
-4. **Start the Application & Server**:
+4. **Create ".env" File 📄**:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+5. **Generate Key for Laravel 🔑**:
+
+    ```bash
+    php artisan key:generate
+    ```
+
+5. **Generate Migrations ✈️**:
+
+    ```bash
+    php artisan migrate
+    ```
+
+6. **Start the Application & Server 🚀**:
 
     ```bash
     npm run dev
