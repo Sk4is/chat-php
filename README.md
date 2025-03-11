@@ -11,8 +11,8 @@ BreezeFlow is a dynamic web application designed for seamless real-time communic
 <table>
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Rol</th>
+      <th>Name</th>
+      <th>Role</th>
     </tr>
   </thead>
   <tbody>
