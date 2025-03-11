@@ -6,7 +6,15 @@
 
 BreezeFlow is a dynamic web application designed for seamless real-time communication. It allows users to engage in one-on-one chats, create private and themed groups, and connect with friends. Whether you're working on a project, participating in interest-based discussions, or just catching up with friends, BreezeFlow provides a user-friendly platform to stay connected. With its intuitive interface, real-time message delivery, and flexible group creation options, BreezeFlow is ideal for both personal and professional communication. Join conversations, share ideas, and collaborate in a secure and interactive environment.
 
-<h1>🔧 Installation & Configuration 🛠️</h1>
+## 📌 Table of Contents
+- [🔧 Installation & Configuration 🛠️](#-installation--configuration-️)
+- [👥 Members & Roles](#-members--roles)
+- [📸 Screenshots](#-screenshots)
+- [⚙️ Stacks](#️-stacks)
+- [📈 Methodology](#-methodology)
+- [👟 Next Steps](#-next-steps)
+
+## 🔧 Installation & Configuration 🛠️
 
 1. **Clone the Repository 🔄**:
 
@@ -55,7 +63,7 @@ BreezeFlow is a dynamic web application designed for seamless real-time communic
     php artisan serve
     ```
 
-<h1>👥 Members & Roles</h1>
+## 👥 Members & Roles
 
 <table>
   <thead>
@@ -84,7 +92,7 @@ BreezeFlow is a dynamic web application designed for seamless real-time communic
   </tbody>
 </table>
 
-<h1>📸 Screenshots</h1>
+## 📸 Screenshots
 
 **Desk Version 💻**:
 
@@ -130,16 +138,16 @@ BreezeFlow is a dynamic web application designed for seamless real-time communic
   </tr>
 </table>
 
-<h1>⚙️ Stacks</h1>
+## ⚙️ Stacks
 
 - **Backend**: PHP & SQL
 - **Frontend**: HTML, CSS, JavaScript, Tailwind CSS
     
-<h1>📈 Methodology</h1>
+## 📈 Methodology
 
 In this project we have worked with Agile Methodology, SCRUM.
 
-<h1>👟 Next steps</h1>
+## 👟 Next steps
 
 1. **Make all views fully functional**:
    - Implement the logic behind the UI components for an interactive user experience.
