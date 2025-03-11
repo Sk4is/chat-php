@@ -1,66 +1,148 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="logo" alt="BreezeFlow">
 </p>
 
-## About Laravel
+<h1>BreezeFlow 🌬️</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+BreezeFlow is a dynamic web application designed for seamless real-time communication. It allows users to engage in one-on-one chats, create private and themed groups, and connect with friends. Whether you're working on a project, participating in interest-based discussions, or just catching up with friends, BreezeFlow provides a user-friendly platform to stay connected. With its intuitive interface, real-time message delivery, and flexible group creation options, BreezeFlow is ideal for both personal and professional communication. Join conversations, share ideas, and collaborate in a secure and interactive environment.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<h1>👥 Members & Roles</h1>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Rol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/PhilippeInCode">Felipe Chacón Montero</a></td>
+      <td>SCRUM Master</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/jthamayo">Judith Tamayo Balogh</a></td>
+      <td>Developer</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Bimai6">Mario Lebrero García</a></td>
+      <td>Developer</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Sk4is">Adrián Pérez Agredano</a></td>
+      <td>Developer</td>
+    </tr>
+  </tbody>
+</table>
 
-## Learning Laravel
+<h1>📸 Screenshots</h1>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Desk Version 💻**:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<table align="center">
+  <tr>
+    <th colspan="3" style="text-align:center; font-size:20px;">Welcome Page</th>
+  </tr>
+  <tr>
+    <td><img src="https://res.cloudinary.com/dimlqpphf/image/upload/v1741697323/Captura_de_pantalla_2025-03-11_134442_wdrfuh.png" alt="BreezeFlow Welcome Page" width="850"></td>
+  </tr>
+</table>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<table align="center">
+  <tr>
+    <th colspan="2" style="text-align:center; font-size:20px;">Register and Login</th>
+  </tr>
+  <tr>
+    <td><img src="https://res.cloudinary.com/dimlqpphf/image/upload/v1741697323/Captura_de_pantalla_2025-03-11_134506_mldhhu.png" alt="BreezeFlow Register Page" width="850"></td>
+  </tr>
+  <tr>
+    <td><img src="https://res.cloudinary.com/dimlqpphf/image/upload/v1741697323/Captura_de_pantalla_2025-03-11_134529_ufnpzi.png" alt="BreezeFlow LogIn Page" width="850"></td>
+  </tr>
+</table>
 
-## Laravel Sponsors
+<table align="center">
+  <tr>
+    <th colspan="1" style="text-align:center; font-size:20px;">Dashboard and Direct Views</th>
+  </tr>
+  <tr>
+    <td><img src="https://res.cloudinary.com/dimlqpphf/image/upload/v1741697323/Captura_de_pantalla_2025-03-11_134608_tytjqa.png" alt="BreezeFlow Dashboard Page" width="850"></td>
+  </tr>
+  <tr>
+    <td><img src="https://res.cloudinary.com/dimlqpphf/image/upload/v1741697323/Captura_de_pantalla_2025-03-11_134638_emwmdv.png" alt="BreezeFlow Direct Messages Page" width="850"></td>
+  </tr>
+</table>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<table align="center">
+  <tr>
+    <th colspan="1" style="text-align:center; font-size:20px;">Profile Options</th>
+  </tr>
+  <tr>
+    <td><img src="https://res.cloudinary.com/dimlqpphf/image/upload/v1741697323/Captura_de_pantalla_2025-03-11_134721_rmddco.png" alt="BreezeFlow Profile Options Page" width="850"></td>
+  </tr>
+</table>
 
-### Premium Partners
+<h1>⚙️ Stacks</h1>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- **Backend**: PHP & SQL
+- **Frontend**: HTML, CSS, JavaScript, Tailwind CSS
 
-## Contributing
+<h1>🔧 Installation</h1>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clone the Repository**:
 
-## Code of Conduct
+    ```bash
+    git clone https://github.com/Bimai6/breeze-flow.git
+    cd breeze-flow
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. **Set Up the Environment**:
 
-## Security Vulnerabilities
+    ```bash
+    npm install
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. **Install and Set Up Composer**:
 
-## License
+    ```bash
+    composer install
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+4. **Start the Application & Server**:
+
+    ```bash
+    npm run dev
+    ```
+
+    ```bash
+    php artisan serve
+    ```
+    
+<h1>📈 Methodology</h1>
+
+In this project we have worked with Agile Methodology, SCRUM.
+
+<h1>👟 Next steps</h1>
+
+1. **Make all views fully functional**:
+   - Implement the logic behind the UI components for an interactive user experience.
+   - Ensure seamless navigation and real-time message delivery.
+
+2. **Allow users to join themed groups**:
+   - Users will be able to discover, join, and participate in groups based on specific topics of interest.
+   - Improve group management features, such as notifications and group invitations.
+
+3. **Friendship and Social Connections**:
+   - Add the ability for users to send, accept, or decline friend requests.
+   - Display friend lists and allow users to chat privately with friends.
+
+4. **Real-Time Notifications**:
+   - Users will receive notifications for new messages, group activity, and friend requests.
+
+5. **User Profiles**:
+   - Implement customizable user profiles where users can upload profile pictures, set statuses, and add bios.
+
+6. **Advanced Search Features**:
+   - Allow users to search for groups, messages, and friends to enhance the user experience.
+
+7. **Mobile Responsiveness**:
+   - Optimize the application for mobile devices to ensure a smooth experience on smartphones and tablets.
