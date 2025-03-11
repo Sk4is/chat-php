@@ -11,7 +11,6 @@
                 <img src="images/icons/newChat 1.png" alt="" class="mr-2 w-6 h-6">
                 {{ _('New chat') }}
             </button>
-            <a href="{{ url('/friends') }}" class="btn btn-primary bg-blue-4 text-white px-4 py-2 rounded w-1/3 min-w-[120px] flex justify-center">{{ _("Friends list")}}</a>
         </div>
     </x-slot>
 
@@ -19,16 +18,14 @@
         <div class="available-chats sm:w-1/3 w-full h-full bg-blue-8 overflow-hidden p-4">
             <div id="button-container" class="flex justify-start items-center h-14 space-x-2 cursor-grab whitespace-nowrap overflow-hidden">
                 <a href="{{ route('public') }}">
-                    <button class="text-white px-3 py-2 rounded text-sm min-w-max">{{ _('Public') }}</button>
+                    <button class="text-white px-3 py-2 rounded text-sm min-w-max text-opacity-50">{{ _('Public') }}</button>
                 </a>
                 <a href="{{ route('direct') }}">
-                    <button class="text-white px-3 py-2 rounded text-sm min-w-max">{{ _('Direct') }}</button>
+                    <button class="text-white px-3 py-2 rounded text-sm min-w-max text-opacity-50">{{ _('Direct') }}</button>
                 </a>
-                <a href="{{ route('group') }}">
-                    <button class="text-white px-3 py-2 rounded text-sm min-w-max">{{ _('Group') }}</button>
-                </a>
+                <button class="text-white px-3 py-2 rounded text-sm min-w-max">{{ _('Group') }}</button>
                 <a href="{{ route('favourites') }}">
-                    <button class="text-white px-3 py-2 rounded text-sm min-w-max">{{ _('Favourites') }}</button>
+                    <button class="text-white px-3 py-2 rounded text-sm min-w-max text-opacity-50">{{ _('Favourites') }}</button>
                 </a>
             </div>
             <div class="h-1 w-4/5 mx-auto border-b"></div>
@@ -81,7 +78,6 @@
             <img src="images/logo.png" alt="BreezeFlow logo" class="w-50 h-50">
             <p class="text-50 text-[#A9D6E5] mt-4">Please, select a chat or group to start chatting.</p>
         </div>
-
 
     </div>
 
