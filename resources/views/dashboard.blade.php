@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <div class="flex items-center justify-between">
-            <img src="images/logo.png" alt="BreezeFlow logo">
+            <img src="https://res.cloudinary.com/demqnwfff/image/upload/v1741725645/breeze_vqle5w.png" alt="BreezeFlow logo" width="70">
             <div class="w-1/2 h-[40px] bg-blue-2 rounded-full flex items-center pr-3">
                 <input type="text" placeholder="Search a group"
                     class="bg-transparent text-blue-10 font-bold w-full h-full px-5 placeholder:text-blue-10 placeholder:font-bold focus:outline-none">
@@ -78,7 +78,7 @@
         </style>
 
         <div id="chat-container" class="current-chat bg-blue-6 h-full w-full flex flex-col justify-center items-center overflow-hidden text-center">
-            <img src="images/logo.png" alt="BreezeFlow logo" class="w-50 h-50">
+            <img src="https://res.cloudinary.com/demqnwfff/image/upload/v1741725645/breeze_vqle5w.png" alt="BreezeFlow logo" width="200">
             <p class="text-50 text-[#A9D6E5] mt-4">Please, select a chat or group to start chatting.</p>
         </div>
 
